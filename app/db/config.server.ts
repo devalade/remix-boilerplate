@@ -2,8 +2,8 @@ import { drizzle } from 'drizzle-orm/better-sqlite3';
 import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
 import Database from 'better-sqlite3';
 
-const sqlite = new Database('sqlite.db');
+const sqlite = new Database('database.db');
 
 export const db = drizzle(sqlite);
 
-migrate(db, { migrationsFolder: './app/db/migrations' });
+migrate(db, { migrationsFolder: './drizzle' });

@@ -1,11 +1,11 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "01f19d4d-d86b-482e-a8e9-9596abfd13fd",
+  "id": "38d83a95-6565-4c5c-8ec0-a856dbc3c085",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "dogs": {
-      "name": "dogs",
+    "users": {
+      "name": "users",
       "columns": {
         "id": {
           "name": "id",
@@ -21,12 +21,35 @@
           "notNull": true,
           "autoincrement": false
         },
-        "breed": {
-          "name": "breed",
+        "email": {
+          "name": "email",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'datetime(\"now\")'"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'datetime(\"now\")'"
         }
       },
       "indexes": {},
