@@ -33,6 +33,13 @@ Then run the app in production mode:
 bun start
 ```
 
+## Features
+
+-   [x] Setup the authentication
+-   [ ] Setup a simple Dashboard
+-   [ ] Profile setting
+-   [ ] Add a landing page
+
 Now you'll need to pick a host to deploy it to.
 
 ### DIY

@@ -1,9 +1,11 @@
-import { drizzle } from 'drizzle-orm/better-sqlite3';
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
-import Database from 'better-sqlite3';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import { migrate } from 'drizzle-orm/postgres-js/migrator';
+import postgres from 'postgres';
+import dotenv from 'dotenv';
+// for migrations
+const client = postgres(process.env.DATABASE_URL!, {
+	max: 1,
+});
 
-const sqlite = new Database('database.db');
-
-export const db = drizzle(sqlite);
-
+const db = drizzle(client);
 migrate(db, { migrationsFolder: './drizzle' });

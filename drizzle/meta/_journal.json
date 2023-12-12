@@ -1,12 +1,12 @@
 {
   "version": "5",
-  "dialect": "sqlite",
+  "dialect": "pg",
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1702239077835,
-      "tag": "0000_mysterious_gravity",
+      "when": 1702344070811,
+      "tag": "0000_even_dagger",
       "breakpoints": true
     }
   ]
