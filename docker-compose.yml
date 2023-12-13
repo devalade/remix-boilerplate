@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    postgres:
+        image: postgres
+        ports:
+            - ${PG_PORT}:5432
+        volumes:
+            - ./.data/db:/var/lib/postgresql/data
+        environment:
+            POSTGRES_USER: 'remix_boilerplate'
+            POSTGRES_PASSWORD: 'remix_boilerplate'
+            POSTGRES_DB: 'remix_boilerplate'
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 9009:8080
