@@ -11,7 +11,10 @@
 		"db:push": "drizzle-kit push:pg --config=drizzle.config.ts",
 		"generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
 		"studio": "drizzle-kit studio",
-		"typecheck": "tsc"
+		"typecheck": "tsc",
+		"lint": "eslint . --fix --ignore-path .gitignore",
+		"format": "prettier --config .prettierrc --write --list-different --ignore-path .gitignore .",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@radix-ui/react-checkbox": "^1.0.4",
@@ -49,7 +52,9 @@
 		"@types/react-dom": "^18.2.7",
 		"@types/uuid": "^9.0.7",
 		"drizzle-kit": "^0.20.6",
-		"eslint": "^8.38.0",
+		"eslint": "^8.55.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.2.0",
 		"typescript": "^5.1.6"
 	},
 	"engines": {
