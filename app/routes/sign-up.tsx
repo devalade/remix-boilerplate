@@ -4,9 +4,8 @@ import { Button } from '~/components/ui/button';
 import { Checkbox } from '~/components/ui/checkbox';
 import { Input } from '~/components/ui/input';
 import { Label } from '~/components/ui/label';
-import { db } from '~/db/config.server';
 import { users } from '~/db/schema.server';
-import { hash } from 'argon2';
+import { signUp } from '~/services/auth.server';
 
 export const meta: MetaFunction = () => {
 	return [
@@ -21,10 +20,13 @@ export function loader() {
 
 export async function action({ request }: ActionFunctionArgs) {
 	const body = await request.formData();
-	await db.insert(users).values({
-		email: body.get('email'),
-		name: body.get('name'),
-		password: body.get('password'),
+	const email = body.get('email')?.toString()!;
+	const name = body.get('name')?.toString()!;
+	const password = body.get('password')?.toString()!;
+	await signUp({
+		email,
+		name,
+		password,
 	});
 	return redirect('/sign-in');
 }
